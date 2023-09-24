@@ -47,11 +47,6 @@ Route::get('/blog', function () {
 //halaman single post
 Route::get('post/{slug}', function ($slug) {
 
-            // foreach ($blog_post as $post) {
-            //     if ($post["slug"]===$slug) {
-            //         $newpos=$post;
-            //     }
-            // }
 
 
 

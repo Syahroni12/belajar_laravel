@@ -21,17 +21,15 @@ class Post
             ]];
 
             public static function all()  {
-               return self::$blog_post;
+               return collect(self::$blog_post);//menambahkan collec dikarnakan ada fungsi yang ingin di pakai
+
             }
             public static function find($slug)  {
-                $posts=self::$blog_post;
-                $pos=[];
-                $newpos=[];
-            foreach ($posts as $p) {
-                if ($p["slug"]===$slug) {
-                    $newpos=$p;
-                }
-            }
-            return $newpos;
+                $posts=static::all();//fungsi self kusus properti static, dan static khusus untuk method static
+
+     
+            return $posts->firstWhere('slug',$slug);//dikarnanakan array dari variabel $posts berupa collecct,
+            //maka dapat memanggil fungsi firstWhere yang berfungsi mengambil data berdasarkan parameter yang ditentukan
+            //contoh di atas mengambil data berdasarkan slug yang di kirim
             }
 }
