@@ -27,7 +27,7 @@ class Post
             public static function find($slug)  {
                 $posts=static::all();//fungsi self kusus properti static, dan static khusus untuk method static
 
-     
+        
             return $posts->firstWhere('slug',$slug);//dikarnanakan array dari variabel $posts berupa collecct,
             //maka dapat memanggil fungsi firstWhere yang berfungsi mengambil data berdasarkan parameter yang ditentukan
             //contoh di atas mengambil data berdasarkan slug yang di kirim
