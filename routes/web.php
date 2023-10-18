@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthorController;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use PharIo\Manifest\Author;
 use PhpParser\Node\Stmt\Return_;
 
 /*
@@ -56,3 +59,11 @@ Route::get('/categories/{category:slug}',function(Category $category){
         'category'=>$category->name
     ]);
 });
+Route::get('/author/{author:username}',[AuthorController::class,'authorr']);
+// Route::get('/author/{user}',function (User $user) {
+//     return view('blog',[
+//         'title'=>'User post',
+//         'posts'=>$user->posts,
+    
+//     ]);
+// });
